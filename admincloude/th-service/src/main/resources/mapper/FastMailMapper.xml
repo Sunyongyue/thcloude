@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.th.thservice.dao.FastMailMapper">
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from fast_mail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.th.thservice.entity.FastMail">
+    insert into fast_mail ( `type`, `modelType`,`datail`,path,sendBy,receiveBy,link,receiveCompany,receiveCompanyAddress,expressCompany,
+    expressNum,`date`,remarks,createBy, createTime, lastUpdateBy, lastUpdateTime,sort
+      )
+    values ( #{type,jdbcType=VARCHAR}, #{modelType,jdbcType=VARCHAR},#{datail,jdbcType=VARCHAR},#{path,jdbcType=VARCHAR},
+      #{sendBy,jdbcType=VARCHAR},#{receiveBy,jdbcType=VARCHAR},#{link,jdbcType=VARCHAR},#{receiveCompany,jdbcType=VARCHAR},#{receiveCompanyAddress,jdbcType=VARCHAR},
+      #{expressCompany,jdbcType=VARCHAR},#{expressNum,jdbcType=VARCHAR},#{date,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR},#{createBy,jdbcType=VARCHAR},#{createTime,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=VARCHAR},
+      #{lastUpdateTime,jdbcType=TIMESTAMP},#{sort,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.th.thservice.entity.FastMail">
+    update fast_mail
+    set `type` = #{type},
+    `modelType`=#{modelType},
+      `datail` = #{datail},
+      `path` = #{path},
+      `sendBy` = #{sendBy},
+      `receiveBy` = #{receiveBy},
+      `link` = #{link},
+      `receiveCompany` = #{receiveCompany},
+      `receiveCompanyAddress` = #{receiveCompanyAddress},
+      expressCompany=#{expressCompany},
+      expressNum=#{expressNum},
+      `date`=#{date},
+      remarks=#{remarks},
+      lastUpdateBy=#{lastUpdateBy},
+      lastUpdateTime=#{lastUpdateTime},
+      sort=#{sort}
+    where id = #{id}
+  </update>
+  <select id="queryAll" resultType="com.th.thservice.entity.FastMail">
+   select * from fast_mail order by sort
+  </select>
+  <select id="selectOne" resultType="com.th.thservice.entity.FastMail" parameterType="com.th.thservice.entity.FastMail">
+    select * from fast_mail
+    <where>
+      <if test="type !=''"> type= #{type}</if>
+      <if test="modelType !=''">and modelType= #{modelType}</if>
+      <if test="sendBy !=''">and sendBy= #{sendBy}</if>
+      <if test="receiveBy !=''">and receiveBy= #{receiveBy}</if>
+      <if test="receiveCompany !=''">and receiveCompany= #{receiveCompany}</if>
+      <if test="expressCompany !=''">and expressCompany= #{expressCompany}</if>
+      <if test="expressNum !=''">and expressNum= #{expressNum}</if>
+      <if test="date !=''">and `date`= #{date}</if>
+      <if test="datail !=''">and `datail`= #{datail}</if>
+      <if test="receiveCompanyAddress !=''">and `receiveCompanyAddress`= #{receiveCompanyAddress}</if>
+    </where>
+  </select>
+  <select id="findByParams" resultType="com.th.thservice.entity.FastMail" parameterType="com.th.thservice.entity.FastMail">
+    select * from fast_mail
+    <where>
+      <if test="type !=''"> type= #{type}</if>
+      <if test="modelType !=''">and modelType= #{modelType}</if>
+      <if test="sendBy !=''">and sendBy= #{sendBy}</if>
+      <if test="receiveBy !=''">and receiveBy= #{receiveBy}</if>
+      <if test="receiveCompany !=''">and receiveCompany= #{receiveCompany}</if>
+      <if test="expressCompany !=''">and expressCompany= #{expressCompany}</if>
+      <if test="expressNum !=''">and expressNum= #{expressNum}</if>
+      <if test="startDate !=''">and `date`>#{startDate}</if>
+      <if test="endDate !=''">and #{endDate}>`date`</if>
+    </where>
+    order by `date` desc
+  </select>
+
+</mapper>

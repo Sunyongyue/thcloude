@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.th.thservice.dao.TestTermMapper">
+  <resultMap id="BaseResultMap" type="com.th.thservice.entity.TestTerm">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="testPlanId" jdbcType="INTEGER" property="testPlanId" />
+    <result column="testName" jdbcType="VARCHAR" property="testName" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from test_term
+    where testPlanId = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.th.thservice.entity.TestTerm">
+    insert into test_term ( `testPlanId`, testName, testTarget,content,testResult,resultPath,`remarks`,operator )
+    values ( #{testPlanId,jdbcType=INTEGER}, #{testName,jdbcType=VARCHAR},#{testTarget,jdbcType=VARCHAR},#{content,jdbcType=VARCHAR},#{testResult,jdbcType=VARCHAR}," ",
+      #{remarks,jdbcType=VARCHAR},#{operator}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.th.thservice.entity.TestTerm">
+    update test_term
+    set
+      `testResult` = #{testResult},
+      `resultPath` =CONCAT(`resultPath`,#{resultPath}),
+      lastUpdateBy=#{lastUpdateBy},
+      lastUpdateTime=#{lastUpdateTime},
+      `status`=1,
+      success=#{success}
+    where id = #{id}
+  </update>
+  <select id="queryAll" resultType="com.th.thservice.entity.TestTerm">
+    select id,testPlanId,testName,testTarget,content,testResult AS testResults,resultPath,remarks,`status`,lastUpdateBy,lastUpdateTime,success,operator from test_term
+    <where>
+      <if test="id!=0">testPlanId=#{id}</if>
+      <if test="startTime !=''">and lastUpdateTime>=#{startTime}</if>
+      <if test="endTime !=''">and #{endTime}>=lastUpdateTime</if>
+      <if test="success !=2">and #{success}=success</if>
+    </where>
+  </select>
+  <select id="countPlanProgress" resultType="double">
+    select sum(`status`)/count(*) from test_term where testPlanId=#{id}
+  </select>
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.th.thservice.dao.TestStepMapper">
+  <resultMap id="BaseResultMap" type="com.th.thservice.entity.TestStep">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="testTargetId" jdbcType="INTEGER" property="testTargetId" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="createBy" jdbcType="VARCHAR" property="createBy" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="lastUpdateBy" jdbcType="VARCHAR" property="lastUpdateBy" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+  </resultMap>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from test_step
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.th.thservice.entity.TestStep">
+    insert into test_step ( `testTargetId`, content, sort, createBy, createTime, lastUpdateBy, lastUpdateTime
+      )
+    values ( #{testTargetId,jdbcType=INTEGER},
+      #{content,jdbcType=VARCHAR},#{sort,jdbcType=INTEGER},#{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=VARCHAR},
+      #{lastUpdateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.th.thservice.entity.TestStep">
+    update test_step
+    set `content` = #{content,jdbcType=VARCHAR},
+      `sort` = #{sort,jdbcType=INTEGER}
+    where id = #{id}
+  </update>
+  <select id="queryAll" resultType="com.th.thservice.entity.TestStep">
+    select * from test_step where testTargetId=#{id} order by sort
+  </select>
+
+</mapper>

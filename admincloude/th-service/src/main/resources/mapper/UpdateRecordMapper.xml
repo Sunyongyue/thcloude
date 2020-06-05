@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.th.thservice.dao.UpdataRecordMapper">
+  <resultMap id="BaseResultMap" type="com.th.thservice.entity.UpdataRecord">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="use" jdbcType="VARCHAR" property="use"/>
+    <result column="matching_protocol" jdbcType="VARCHAR" property="matching_protocol" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="createBy" jdbcType="VARCHAR" property="createBy" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="lastUpdateBy" jdbcType="VARCHAR" property="lastUpdateBy" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="useId" jdbcType="INTEGER" property="useId" />
+    <result column="matching_protocolId" jdbcType="INTEGER" property="matching_protocolId" />
+    <result column="nameId" jdbcType="INTEGER" property="nameId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, `describe`, path, `status`, createBy, createTime, lastUpdateBy, lastUpdateTime
+  </sql>
+  <select id="selectAll" parameterType="java.lang.Long" resultMap="BaseResultMap">
+   select a.id,a.sort,a.createBy,a.createTime,a.lastUpdateBy,a.lastUpdateTime,b.label as `use`,c.label as `matching_protocol`,d.label as `name`
+   FROM  update_re a,sys_dict b,sys_dict c,sys_dict d
+   WHERE a.`use`=b.id and a.matching_protocol=c.id and a.`name`=d.id ORDER BY sort
+  </select>
+  <select id="findPage"  resultMap="BaseResultMap">
+   select a.id,a.sort,a.createBy,a.createTime,a.lastUpdateBy,a.lastUpdateTime,b.label as `use`,c.label as `matching_protocol`,d.label as `name`
+   FROM  update_re a,sys_dict b,sys_dict c,sys_dict d
+   WHERE a.`use`=b.id and a.matching_protocol=c.id and a.`name`=d.id ORDER BY sort desc
+  </select>
+  <select id="findPageByparams"  resultMap="BaseResultMap">
+   select a.id,a.sort,a.createBy,a.createTime,a.lastUpdateBy,a.lastUpdateTime,b.label as `use`,c.label as `matching_protocol`,d.label as `name`
+   FROM  update_re a,sys_dict b,sys_dict c,sys_dict d
+    <where>
+      <if test="1 !=0"> a.`use`=b.id</if>
+      <if test="1 !=0">and a.matching_protocol=`c`.id </if>
+      <if test="1 !=0">and a.name=d.id</if>
+      <if test="1 !=0">and a.falg=#{falgId}</if>
+      <if test="use !=0">and a.use= #{use}</if>
+      <if test="protocol !=0">and a.matching_protocol= #{protocol}</if>
+      <if test="name !=0">and a.name= #{name}</if>
+    </where>
+    ORDER BY sort desc
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from update_re
+    where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.th.thservice.entity.UpdataRecord">
+    insert into update_re ( `use`, matching_protocol, `name`, falg,createBy, createTime, lastUpdateBy, lastUpdateTime,sort
+      )
+    values ( #{use,jdbcType=INTEGER}, #{matching_protocol,jdbcType=INTEGER},
+      #{name,jdbcType=INTEGER},#{falg,jdbcType=INTEGER},#{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=VARCHAR},
+      #{lastUpdateTime,jdbcType=TIMESTAMP},#{sort,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.th.thservice.entity.UpdataRecord">
+    update update_re
+    set `use` = #{use,jdbcType=INTEGER},
+      matching_protocol = #{matching_protocol,jdbcType=BIGINT},
+      `name` = #{name,jdbcType=INTEGER},
+      `falg` = #{falg,jdbcType=INTEGER},
+      createBy = #{createBy,jdbcType=VARCHAR},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      lastUpdateBy = #{lastUpdateBy,jdbcType=VARCHAR},
+      lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      sort = #{sort,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

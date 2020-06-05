@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="533e4613-20d5-4d38-8b2e-740bafb97b29" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/th-service/src/main/java/com/th/thservice/controller/TestPlanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/th-service/src/main/java/com/th/thservice/controller/TestPlanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/th-service/src/main/java/com/th/thservice/controller/TestTemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/th-service/src/main/java/com/th/thservice/controller/TestTemplateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/th-service/src/main/java/com/th/thservice/entity/TestPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/th-service/src/main/java/com/th/thservice/entity/TestPlan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/th-service/src/main/java/com/th/thservice/entity/TestTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/th-service/src/main/java/com/th/thservice/entity/TestTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/th-service/src/main/java/com/th/thservice/service/TestTemplateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/th-service/src/main/java/com/th/thservice/service/TestTemplateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/th-service/src/main/java/com/th/thservice/service/impl/TestTemplateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/th-service/src/main/java/com/th/thservice/service/impl/TestTemplateServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/th-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/th-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/th-service/src/main/resources/mapper/TestTemplateMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/th-service/src/main/resources/mapper/TestTemplateMapper.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\allApps\MavenRe" />
+        <option name="mavenHome" value="D:/allApps/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\allApps\apache-maven-3.6.3\conf\settings.xml" />
+        <option name="workOffline" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZFDkYeqnUgOeVYVkxgkRrNEx3R" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.13793103" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\GitWorkSpace\TianHeInfoSystem\admincloude\th-service\src\main\resources\mapper" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ThServiceApplication">
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="admincloude" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="admincloude" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.th.eurekaclient.EurekaClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="eureka-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.th.eurekaserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.th.eurekaserver.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="th-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.th.thservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.th.thservice.ThServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="533e4613-20d5-4d38-8b2e-740bafb97b29" name="Default Changelist" comment="" />
+      <created>1584426093265</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584426093265</updated>
+      <workItem from="1584426108900" duration="15259000" />
+      <workItem from="1584489865043" duration="18323000" />
+      <workItem from="1584576169594" duration="8501000" />
+      <workItem from="1584598684438" duration="1345000" />
+      <workItem from="1584600089752" duration="189000" />
+      <workItem from="1584600331301" duration="4927000" />
+      <workItem from="1584606932974" duration="1631000" />
+      <workItem from="1584608611511" duration="216000" />
+      <workItem from="1584609660262" duration="633000" />
+      <workItem from="1584610379360" duration="1266000" />
+      <workItem from="1584612308059" duration="904000" />
+      <workItem from="1584622901415" duration="12656000" />
+      <workItem from="1584921768705" duration="8542000" />
+      <workItem from="1585094969519" duration="8235000" />
+      <workItem from="1585181548836" duration="18117000" />
+      <workItem from="1585267287234" duration="16638000" />
+      <workItem from="1585530280651" duration="14896000" />
+      <workItem from="1585613513162" duration="49164000" />
+      <workItem from="1585792595000" duration="1646000" />
+      <workItem from="1585795519754" duration="9859000" />
+      <workItem from="1585872962839" duration="11201000" />
+      <workItem from="1586217580841" duration="9680000" />
+      <workItem from="1586304704562" duration="4589000" />
+      <workItem from="1586397029160" duration="24262000" />
+      <workItem from="1586734830966" duration="2703000" />
+      <workItem from="1586743066947" duration="8900000" />
+      <workItem from="1586822649950" duration="27319000" />
+      <workItem from="1586908793670" duration="24691000" />
+      <workItem from="1586992756996" duration="11904000" />
+      <workItem from="1587347538729" duration="1979000" />
+      <workItem from="1587433105979" duration="15776000" />
+      <workItem from="1587690950642" duration="1426000" />
+      <workItem from="1587708902507" duration="5322000" />
+      <workItem from="1587859556887" duration="2281000" />
+      <workItem from="1589244327897" duration="9932000" />
+      <workItem from="1589365329574" duration="2155000" />
+      <workItem from="1589414576281" duration="7773000" />
+      <workItem from="1589768165096" duration="18000" />
+      <workItem from="1589778713494" duration="17000" />
+      <workItem from="1589878269800" duration="98000" />
+      <workItem from="1589947030914" duration="77000" />
+      <workItem from="1590480137316" duration="606000" />
+      <workItem from="1590983218248" duration="248000" />
+      <workItem from="1591232229633" duration="11939000" />
+      <workItem from="1591315392177" duration="15387000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1591329661297">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1591329661297" />
+    <state x="327" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1586506739600">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="327" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1586506739600" />
+    <state x="548" y="271" width="439" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585291922994">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="271" width="439" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1585291922994" />
+    <state x="528" y="113" key="FileChooserDialogImpl" timestamp="1591249952406">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="528" y="113" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1591249952406" />
+    <state width="1493" height="456" key="GridCell.Tab.0.bottom" timestamp="1591341835491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="456" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591341835491" />
+    <state width="1493" height="456" key="GridCell.Tab.0.center" timestamp="1591341835491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="456" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591341835491" />
+    <state width="1493" height="456" key="GridCell.Tab.0.left" timestamp="1591341835491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="456" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591341835491" />
+    <state width="1493" height="456" key="GridCell.Tab.0.right" timestamp="1591341835491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="456" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591341835491" />
+    <state width="1493" height="456" key="GridCell.Tab.1.bottom" timestamp="1591341441027">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="456" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591341441027" />
+    <state width="1493" height="456" key="GridCell.Tab.1.center" timestamp="1591341441026">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="456" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591341441026" />
+    <state width="1493" height="456" key="GridCell.Tab.1.left" timestamp="1591341441026">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="456" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591341441026" />
+    <state width="1493" height="456" key="GridCell.Tab.1.right" timestamp="1591341441027">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="456" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591341441027" />
+    <state width="1493" height="452" key="GridCell.Tab.2.bottom" timestamp="1591338769646">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="452" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591338769646" />
+    <state width="1493" height="452" key="GridCell.Tab.2.center" timestamp="1591338769646">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="452" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1591338769646" />
+    <state width="1493" height="452" key="GridCell.Tab.2.left" timestamp="1591338769646">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="452" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1591338769646" />
+    <state width="1493" height="452" key="GridCell.Tab.2.right" timestamp="1591338769646">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="452" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1591338769646" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1584601085196">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584601085196" />
+    <state x="454" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587859601618">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="454" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587859601618" />
+    <state x="178" y="22" key="new project wizard" timestamp="1584607004641">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="178" y="22" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1584607004641" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1586928434557">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1586928434557" />
+    <state x="361" y="71" key="scopes" timestamp="1584607960197">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="scopes/0.0.1536.824@0.0.1536.824" timestamp="1584607960197" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585545975207">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585545975207" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/th-service/src/main/java/com/th/thservice/entity/PhotoInfo.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

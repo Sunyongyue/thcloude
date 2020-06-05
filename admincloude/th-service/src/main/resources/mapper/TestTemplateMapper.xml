@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.th.thservice.dao.TestTemplateMapper">
+  <resultMap id="BaseResultMap" type="com.th.thservice.entity.TestTemplate">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="parent_id" jdbcType="INTEGER" property="parent_id" />
+    <result column="testName" jdbcType="VARCHAR" property="testName" />
+    <result column="testTarget" jdbcType="VARCHAR" property="testTarget" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="attribute" jdbcType="INTEGER" property="attribute" />
+    <result column="operaFlag" jdbcType="INTEGER" property="operaFlag" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="createBy" jdbcType="VARCHAR" property="createBy" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="lastUpdateBy" jdbcType="VARCHAR" property="lastUpdateBy" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+  </resultMap>
+<!--  <sql id="Base_Column_List">
+    id, `describe`, path, `status`, createBy, createTime, lastUpdateBy, lastUpdateTime
+  </sql>-->
+ <!-- <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+   select * from test_template where id=#{id}
+  </select>-->
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from test_template
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.th.thservice.entity.TestTemplate">
+    insert into test_template ( `parent_id`, testName, testTarget,content,`attribute`,operaFlag,remarks,sort, createBy, createTime, lastUpdateBy, lastUpdateTime,`type`
+      )
+    values ( #{parent_id,jdbcType=INTEGER}, #{testName,jdbcType=VARCHAR},#{testTarget,jdbcType=VARCHAR},#{content,jdbcType=VARCHAR},
+      #{attribute,jdbcType=INTEGER},#{operaFlag,jdbcType=INTEGER},#{remarks,jdbcType=VARCHAR},#{sort,jdbcType=INTEGER},#{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=VARCHAR},
+      #{lastUpdateTime,jdbcType=TIMESTAMP},#{type,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.th.thservice.entity.TestTemplate">
+    update test_template
+    set `testName` = #{testName,jdbcType=VARCHAR},
+     `testTarget` = #{testTarget,jdbcType=VARCHAR},
+     `content` = #{content,jdbcType=VARCHAR},
+      `attribute` = #{attribute,jdbcType=INTEGER},
+      `operaFlag` = #{operaFlag,jdbcType=INTEGER},
+      `remarks` = #{remarks,jdbcType=VARCHAR},
+      lastUpdateBy=#{lastUpdateBy},
+      lastUpdateTime=#{lastUpdateTime},
+      parent_id=#{parent_id},
+      sort=#{sort},
+      `type`=#{type,jdbcType=INTEGER}
+    where id = #{id}
+  </update>
+  <select id="queryAll" resultType="com.th.thservice.entity.TestTemplate">
+    select * from test_template  order by sort
+  </select>
+  <select id="queryByParentId" resultType="com.th.thservice.entity.TestTemplate" parameterType="java.lang.Long">
+    select * from test_template  where parent_id=#{id} order by sort
+  </select>
+  <select id="queryById" resultType="com.th.thservice.entity.TestTemplate" parameterType="java.lang.Long">
+    select * from test_template  where id=#{id}
+  </select>
+  <select id="queryByParams" resultType="com.th.thservice.entity.TestTemplate">
+    select * from test_template
+    <where>
+      <if test="testName !=0"> testName= #{testName}</if>
+    </where>
+    order by sort
+  </select>
+</mapper>

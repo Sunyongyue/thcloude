@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.th.thservice.dao.ExpressManagementMapper">
+<resultMap id="BaseResultMap" type="com.th.thservice.entity.ExpressManagement">
+    <id column="id" jdbcType="BIGINT" property="id"/>
+    <result column="Date" jdbcType="VARCHAR" property="Date"/>
+    <result column="Addressee" jdbcType="VARCHAR" property="Addressee"/>
+    <result column="Sender" jdbcType="VARCHAR" property="Sender"/>
+    <result column="Company" jdbcType="VARCHAR" property="Company"/>
+    <result column="ExpressNum" jdbcType="BIGINT" property="ExpressNum"/>
+    <result column="Address" jdbcType="VARCHAR" property="Address"/>
+    <result column="Content" jdbcType="VARCHAR" property="Content"/>
+    <result column="ExpressType" jdbcType="VARCHAR" property="ExpressType"/>
+    <result column="Remark" jdbcType="VARCHAR" property="Remark"/>
+    <result column="SrType" jdbcType="VARCHAR" property="SrType"/>
+    <result column="ExpressCompany" jdbcType="VARCHAR" property="ExpressCompany"/>
+</resultMap>
+    <sql id="Base_Column_List">
+            id,Date,Addressee,Sender,Company,ExpressNum,Address,Content,ExpressType,Remark,SrType,ExpressCompany
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from expressmanagement
+        WHERE id=#{id,jdbcType=BIGINT};
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from expressmanagement
+    where id = #{id,jdbcType=BIGINT}
+     </delete>
+    <insert id="insert" parameterType="com.th.thservice.entity.ExpressManagement">
+        insert into
+        (id,`Date`,Addressee,Sender,Company,ExpressNum,Address,Content,
+        ExpressType,Remark,SrType,ExpressCompany)
+        values
+        (#{id,jdbcType=BIGINT},#{Date,jdbcType=VARCHAR},#{Addressee,jdbcType=VARCHAR},
+        #{Sender,jdbcType=VARCHAR},#{Company,jdbcType=VARCHAR},#{ExpressNum,jdbcType=BIGINT},
+        #{Address,jdbcType=VARCHAR},#{Content,jdbcType=VARCHAR},#{ExpressType,jdbcType=VARCHAR},
+        #{Remark,jdbcType=VARCHAR},#{SrType,jdbcType=VARCHAR},
+        #{ExpressCompany,jdbcType=VARCHAR})
+    </insert>
+
+    <insert id="insertSelective" parameterType="com.th.thservice.entity.ExpressManagement">
+        insert into
+        exppressmanagement
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                id,
+            </if>
+            <if test="Date!=null">
+                    `Date`,
+            </if>
+            <if test="Addressee!=null">
+                Addressee,
+            </if>
+            <if test="Sender!=null">
+                    Sender,
+            </if>
+            <if test="Company!=null">
+                 Company,
+            </if>
+            <if test="ExpressNum!=null">
+                ExpressNum,
+            </if>
+            <if test="Address!=null">
+                Address,
+            </if>
+            <if test="Content!=null">
+                Content,
+            </if>
+            <if test="ExpressType!=null">
+                ExpressType,
+            </if>
+            <if test="Remark!=null">
+                    Remark,
+            </if>
+            <if test="SrType!=null">
+                SrType,
+            </if>
+            <if test="ExpressCompany!=null">
+                    ExpressCompany,
+            </if>
+        </trim>
+
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="Date!=null">
+                #{Date,jdbcType=VARCHAR},
+            </if>
+            <if test="Addressee!=null">
+                #{Addressee,jdbcType=VARCHAR},
+            </if>
+            <if test="Sender!=null">
+                #{Sender,jdbcType=VARCHAR},
+            </if>
+            <if test="Company!=null">
+                #{Company,jdbcType=VARCHAR},
+            </if>
+            <if test="ExpressNum!=null">
+                #{ExpressNum,jdbcType=VARCHAR},
+            </if>
+            <if test="Address!=null">
+                #{Address,jdbcType=VARCHAR},
+            </if>
+            <if test="Content!=null">
+                #{Content,jdbcType=VARCHAR},
+            </if>
+            <if test="ExpressType!=null">
+                #{ExpressType,jdbcType=VARCHAR},
+            </if>
+            <if test="Remark!=null">
+                #{Remark,jdbcType=VARCHAR},
+            </if>
+            <if test="SrType!=null">
+                #{SrType,jdbcType=VARCHAR},
+            </if>
+            <if test="ExpressCompany!=null">
+                #{ExpressCompany,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.th.thservice.entity.ExpressManagement">
+        update expressmanagement
+        <set>
+            <if test="id!=null">
+                id,
+            </if>
+            <if test="Date!=null">
+                `Date`,
+            </if>
+            <if test="Addressee!=null">
+                Addressee,
+            </if>
+            <if test="Sender!=null">
+                Sender,
+            </if>
+            <if test="Company!=null">
+                Company,
+            </if>
+            <if test="ExpressNum!=null">
+                ExpressNum,
+            </if>
+            <if test="Address!=null">
+                Address,
+            </if>
+            <if test="Content!=null">
+                Content,
+            </if>
+            <if test="ExpressType!=null">
+                ExpressType,
+            </if>
+            <if test="Remark!=null">
+                Remark,
+            </if>
+            <if test="SrType!=null">
+                SrType,
+            </if>
+            <if test="ExpressCompany!=null">
+                ExpressCompany,
+            </if>
+        </set>
+        where id=#{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.th.thservice.entity.ExpressManagement">
+        update expressmanagement
+        set `Date`= #{Date,jdbcType=VARCHAR},
+        Addressee= #{Addressee,jdbcType=VARCHAR},
+        Sender=#{Sender,jdbcType=VARCHAR},
+        Company=#{Company,jdbcType=VARCHAR},
+        ExpressNmu=#{ExpressNum,jdbcType=BIGINT},
+        #{Address,jdbcType=VARCHAR},#{Content,jdbcType=VARCHAR},#{ExpressType,jdbcType=VARCHAR},
+        #{Remark,jdbcType=VARCHAR},#{SrType,jdbcType=VARCHAR},
+        #{ExpressCompany,jdbcType=VARCHAR}
+        where id=#{id,jdbcType=BIGINT}
+    </update>
+    <select id="findPage" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        expressmanagemengt
+    </select>
+
+
+
+</mapper>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.th.thservice.dao.ExceptionCodeMapper">
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from exception_code
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.th.thservice.entity.ExceptionCode">
+    insert into exception_code ( `model`, `code`,`reason`,alarm,remarks,sort, createBy, createTime, lastUpdateBy, lastUpdateTime
+      )
+    values ( #{model,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR},
+      #{reason,jdbcType=VARCHAR},#{alarm,jdbcType=VARCHAR},#{remarks,jdbcType=VARCHAR},#{sort,jdbcType=INTEGER},#{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=VARCHAR},
+      #{lastUpdateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.th.thservice.entity.ExceptionCode">
+    update exception_code
+    set `model` = #{model},
+    `code`=#{code},
+      `reason` = #{reason},
+      alarm=#{alarm},
+      remarks=#{remarks},
+      sort=#{sort}
+    where id = #{id}
+  </update>
+  <select id="queryAll" resultType="com.th.thservice.entity.ExceptionCode">
+   select * from exception_code order by sort
+  </select>
+  <select id="findByParams" resultType="com.th.thservice.entity.ExceptionCode">
+    select  a.id,b.label as `model`, a.`code`,a.`reason`,a.alarm,a.remarks,a.sort, a.createBy, a.createTime, a.lastUpdateBy, a.lastUpdateTime
+    from exception_code a,sys_dict b
+    <where>
+      <if test="1 !=0">a.model=b.id</if>
+      <if test="model !=''">and b.id= #{model}</if>
+    </where>
+    order by sort
+  </select>
+
+</mapper>

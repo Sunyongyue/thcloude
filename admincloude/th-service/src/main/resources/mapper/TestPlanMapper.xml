@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.th.thservice.dao.TestPlanMapper">
+  <resultMap id="BaseResultMap" type="com.th.thservice.entity.TestPlan">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="planName" jdbcType="VARCHAR" property="planName" />
+    <result column="operator" jdbcType="VARCHAR" property="operator" />
+    <result column="planProgress" jdbcType="VARCHAR" property="planProgress" />
+    <result column="templateId" jdbcType="VARCHAR" property="templateId" />
+    <result column="planCompleteTime" jdbcType="VARCHAR" property="planCompleteTime" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="createBy" jdbcType="VARCHAR" property="createBy" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="lastUpdateBy" jdbcType="VARCHAR" property="lastUpdateBy" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+  </resultMap>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from test_plan
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.th.thservice.entity.TestPlan">
+    insert into test_plan ( `planName`, operator,`planProgress`,testName,planCompleteTime,sort, createBy, createTime, lastUpdateBy, lastUpdateTime
+      )
+    values ( #{planName,jdbcType=VARCHAR}, #{operator,jdbcType=VARCHAR},
+      #{planProgress,jdbcType=VARCHAR},#{testName,jdbcType=VARCHAR},#{planCompleteTime,jdbcType=VARCHAR},#{sort,jdbcType=INTEGER},#{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=VARCHAR},
+      #{lastUpdateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.th.thservice.entity.TestPlan">
+    update test_plan
+    set `planName` = #{planName},
+    testName=#{testName},
+      `operator` = #{operator},
+      planCompleteTime=#{planCompleteTime},
+      sort=#{sort}
+    where id = #{id}
+  </update>
+  <select id="queryAll" resultType="com.th.thservice.entity.TestPlan">
+   select * from test_plan order by sort
+  </select>
+  <select id="queryByParams" resultType="com.th.thservice.entity.TestPlan">
+    select * from test_plan
+    <where>
+      <if test="planName !=''">planName= #{planName}</if>
+      <if test="operator !=''">and operator= #{operator}</if>
+      <if test="startTime !=''">and createTime>#{startTime}</if>
+      <if test="endTime !=''">and #{endTime}>createTime</if>
+    </where>
+    order by sort
+  </select>
+  <select id="selectMaxId" resultType="Long">
+    select max(id)  FROM test_plan
+  </select>
+</mapper>

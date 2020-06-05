@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.th.thservice.dao.TestTargetMapper">
+  <resultMap id="BaseResultMap" type="com.th.thservice.entity.TestTarget">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="testTemplateId" jdbcType="INTEGER" property="testTemplateId" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="createBy" jdbcType="VARCHAR" property="createBy" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="lastUpdateBy" jdbcType="VARCHAR" property="lastUpdateBy" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from test_target
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.th.thservice.entity.TestTarget">
+    insert into test_target ( `testTemplateId`, content, sort, createBy, createTime, lastUpdateBy, lastUpdateTime
+      )
+    values ( #{testTemplateId,jdbcType=INTEGER}, #{content},
+     #{sort,jdbcType=INTEGER},#{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=VARCHAR},
+      #{lastUpdateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.th.thservice.entity.TestTarget">
+    update test_target
+    set `content` = #{content},
+      sort=#{sort}
+    where id = #{id}
+  </update>
+  <select id="queryAll" resultType="com.th.thservice.entity.TestTarget">
+    select * from test_target where testTemplateId=#{id} order by sort
+  </select>
+  <!--<select id="findByParams" resultType="com.th.thservice.entity.TestTarget">
+    select * from test_target
+    <where>
+      <if test="1 !=0">and a.matching_protocol=d.id</if>
+      <if test="use !=0">and a.use= #{use}</if>
+      <if test="protocol !=0">and a.matching_protocol= #{protocol}</if>
+      <if test="model !=0">and a.model= #{model}</if>
+    </where>
+    order by sort
+  </select>-->
+</mapper>

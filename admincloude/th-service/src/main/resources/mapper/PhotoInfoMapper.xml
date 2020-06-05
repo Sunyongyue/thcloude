@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.th.thservice.dao.PhotoInfoMapper">
+  <resultMap id="BaseResultMap" type="com.th.thservice.entity.PhotoInfo">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="parentId" jdbcType="INTEGER" property="parentId" />
+    <result column="describe" jdbcType="VARCHAR" property="describe" />
+    <result column="path" jdbcType="VARCHAR" property="path" />
+    <result column="dispalyType" jdbcType="VARCHAR" property="dispalyType" />
+    <result column="createBy" jdbcType="VARCHAR" property="createBy" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="lastUpdateBy" jdbcType="VARCHAR" property="lastUpdateBy" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+  </resultMap>
+
+  <select id="findByParent"  resultMap="BaseResultMap">
+   select a.id,a.parent_id as parentId,a.createBy,a.createTime,a.lastUpdateBy,a.lastUpdateTime,a.path,a.`describe`,a.sort,b.label as dispalyType
+   from photo_info a,sys_dict b
+   where a.dispaly_type=b.id and parent_id=#{id} order by a.sort
+  </select>
+  <delete id="deleteByPrimaryKey" >
+    delete from photo_info
+    where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.th.thservice.entity.PhotoInfo">
+    insert into photo_info ( `parent_id`, `describe`, `path`,dispaly_type ,createBy, createTime, lastUpdateBy, lastUpdateTime,sort
+      )
+    values ( #{parentId,jdbcType=INTEGER}, #{describe,jdbcType=VARCHAR},#{path,jdbcType=VARCHAR},
+      #{dispalyType,jdbcType=INTEGER},#{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=VARCHAR},
+      #{lastUpdateTime,jdbcType=TIMESTAMP},#{sort,jdbcType=INTEGER}
+      )
+  </insert>
+
+</mapper>
